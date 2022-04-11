@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="w-screen h-screen bg-gray-900 grid place-content-center">
+    <div class="w-80 p-5 bg-gray-800 rounded-2xl">
+      <!-- Upper -->
+      <div>
+        <div class="relative cursor-pointer">
+          <img
+            id="equilibrium-image"
+            class="w-full rounded-lg mb-5"
+            src="./images/image-equilibrium.jpg"
+            alt="etherium"
+          />
+          <div
+            id="view-mode"
+            class="hidden enabsolute top-0 bottom-0 left-0 right-0"
+          >
+            <div
+              class="absolute top-0 bottom-0 left-0 right-0 bg-cyan-300 opacity-50 rounded-lg"
+            ></div>
+            <img
+              class="opacity-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              src="./images/icon-view.svg"
+              alt="view-icon"
+            />
+          </div>
+        </div>
+        <div>
+          <h2
+            class="text-white text-2xl font-bold mb-3 hover:text-cyan-300 transition cursor-pointer"
+          >
+            Equilibrium #3429
+          </h2>
+          <p class="text-gray-300 mb-5">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+        </div>
+      </div>
+      <!-- Lower -->
+      <div
+        class="flex items-center justify-between pb-3 border-b border-b-gray-500"
+      >
+        <div class="flex items-center">
+          <img
+            class="mr-2"
+            src="./images/icon-ethereum.svg"
+            alt="etherium-icon"
+          />
+          <span class="text-cyan-300 font-bold">0.041ETH</span>
+        </div>
+        <div class="flex items-center">
+          <img class="mr-2" src="./images/icon-clock.svg" alt="clock-icon" />
+          <span class="text-blue-200">3 days left</span>
+        </div>
+      </div>
+      <!-- Avatar -->
+      <div class="flex items-center py-3">
+        <img
+          class="h-10 border-2 rounded-full mr-3"
+          src="./images/image-avatar.png"
+          alt="Avatar"
+        />
+        <span class="text-gray-300"
+          >Creation of
+          <span
+            class="text-white font-semibold hover:text-cyan-300 transition cursor-pointer"
+            >Jules Wyvern</span
+          ></span
+        >
+      </div>
+    </div>
+
+    <div
+      class="text-white attribution absolute bottom-4 left-1/2 -translate-x-1/2"
+    >
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script>
+      const image = document.getElementById("equilibrium-image");
+      const viewMode = document.getElementById("view-mode");
+      image.addEventListener("mouseover", () => {
+        viewMode.classList.remove("hidden");
+      });
+      image.addEventListener("mouseout", () => {
+        viewMode.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
